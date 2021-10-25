@@ -9,3 +9,13 @@ git add NOTES
 git commit -m'Initial commit'
 ```
 
+# Set up python virtual env
+
+```
+brew install python3
+python -m venv venv
+echo venv > .gitignore
+git add .gitignore
+git commit -m 'Setup python venv'
+```
+
