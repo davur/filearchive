@@ -19,3 +19,11 @@ git add .gitignore
 git commit -m 'Setup python venv'
 ```
 
+# Install Django
+
+```
+pip install Django
+pip freeze > requirements.txt
+git add requirements.txt
+git commit -m'Install Django'
+```
