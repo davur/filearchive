@@ -27,3 +27,16 @@ pip freeze > requirements.txt
 git add requirements.txt
 git commit -m'Install Django'
 ```
+
+# Initialise Django project
+
+```
+django-admin startproject project .
+git add manage.py project/
+python manage.py migrate
+python manage.py createsuperuser
+echo '*.pyc' >> .gitignore
+echo 'db.sqlite3' >> .gitignore
+git add manage.py project .gitignore NOTES
+git commit -m'Initialise Django project'
+```
