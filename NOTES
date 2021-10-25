@@ -40,3 +40,11 @@ echo 'db.sqlite3' >> .gitignore
 git add manage.py project .gitignore NOTES
 git commit -m'Initialise Django project'
 ```
+
+# Start "app"
+
+```
+python manage.py startapp filearchive
+git add filearchive/ NOTES
+git commit -m'Start "app"'
+```
