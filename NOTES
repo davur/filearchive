@@ -1,0 +1,11 @@
+# Set up new git repo
+
+```
+mkdir -p ~/repos/filearchive
+cd ~/repos/filearchive
+git init
+touch NOTES
+git add NOTES
+git commit -m'Initial commit'
+```
+
