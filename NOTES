@@ -48,3 +48,17 @@ python manage.py startapp filearchive
 git add filearchive/ NOTES
 git commit -m'Start "app"'
 ```
+
+# Define models
+
+```
+touch filearchive/models.py
+# edit filearchive/models.py
+python manage.py makemigrations
+python manage.py migrate
+git add NOTES
+git add filearchive/admin.py
+git add filearchive/migrations/0001_initial.py
+git add filearchive/models.py
+git commit -m'Define model'
+```
