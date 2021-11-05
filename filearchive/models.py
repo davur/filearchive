@@ -12,6 +12,7 @@ class Path(models.Model):
     class FileType(models.TextChoices):
         DIRECTORY = 'd', 'Directory'
         FILE = 'f', 'File'
+        IGNORED = 'i', 'Ignored'
 
     name = models.CharField(max_length=255, blank=False, null=False)
     root = models.ForeignKey('Root', on_delete=models.CASCADE)

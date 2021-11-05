@@ -40,6 +40,7 @@ class Command(BaseCommand):
             elif entry.is_dir():
                 if entry.name in ['.svn', '.git', 'venv', 'env', '__pycache__', 'node_modules', 'npm_modules']:
                     typ = '0 '
+                    file_type = Path.FileType.IGNORED
                 else:
                     typ = '+ '
                     file_type = Path.FileType.DIRECTORY

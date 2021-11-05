@@ -74,3 +74,16 @@ touch filearchive/management/commands/scandisk.py
 git add filearchive/management
 git commit -m'Define management command'
 ```
+
+# Logic change req change to model/schema
+
+```
+touch filearchive/models.py
+python manage.py makemigrations
+python manage.py migrate
+touch filearchive/management/commands/scandisk.py
+git add filearchive/models.py
+git add filearchive/management/commands/scandisk.py
+git add filearchive/migrations/0002_alter_path_file_type.py
+git add NOTES
+git commit -m'Add filetype enum for ignored dirs'
