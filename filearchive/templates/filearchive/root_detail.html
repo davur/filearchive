@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block "main" %}
+
+<a href="/">« Back</a>
+
+<h1>{{ object }}</h1>
+
+<ul>
+    {% for child in object.root_paths.all %}
+        <li><a href="/path/{{ child.pk }}/">{{ child }}</a></li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

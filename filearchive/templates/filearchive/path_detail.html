@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block "main" %}
+
+{% if object.parent %}
+<a href="/path/{{ object.parent_id }}/">« Back</a>
+{% else %}
+<a href="/{{ object.root_id }}/">« Back</a>
+{% endif %}
+
+<h1>{{ object }}</h1>
+
+<ul>
+    {% for child in object.children.all %}
+        <li>
+            {% ifequal child.file_type "d" %}
+                <a href="/path/{{ child.pk }}/">{{ child }}</a>
+            {% else %}
+                <span>{{ child }}</span>
+            {% endifequal %}
+        </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

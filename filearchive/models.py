@@ -7,6 +7,9 @@ class Root(models.Model):
     def __str__(self):
         return self.name
 
+    def root_paths(self):
+        return self.path_set.filter(parent__isnull=True)
+
 
 class Path(models.Model):
     class FileType(models.TextChoices):

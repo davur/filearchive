@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from filearchive.views import RootListView, RootDetailView, PathDetailView
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', RootListView.as_view()),
+    path('path/<slug:slug>/', PathDetailView.as_view()),
+    path('<slug:slug>/', RootDetailView.as_view()),
 ]
+
