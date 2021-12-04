@@ -35,24 +35,17 @@ class Command(BaseCommand):
             file_type = None
             scan = False
 
-            if entry.is_symlink():
-                typ = '> '
-            elif entry.is_dir():
+            if entry.is_dir():
                 if entry.name in ['.svn', '.git', 'venv', 'env', '__pycache__', 'node_modules', 'npm_modules']:
-                    typ = '0 '
                     file_type = Path.FileType.IGNORED
                 else:
-                    typ = '+ '
                     file_type = Path.FileType.DIRECTORY
                     if entry.name[-4:] == '.app':
                         scan = False
                     else:
                         scan = True
             elif entry.is_file():
-                typ = '- '
                 file_type = Path.FileType.FILE
-            else:
-                typ = '? '
 
             # print('%s%s%s' % ('    ' * indent, typ, entry.name))
 
