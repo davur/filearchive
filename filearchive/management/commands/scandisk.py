@@ -36,8 +36,15 @@ class Command(BaseCommand):
             scan = False
 
             if entry.is_dir():
-                if entry.name in ['.svn', '.git', 'venv', 'env', '__pycache__', 'node_modules', 'npm_modules']:
+                if entry.name in ['.Spotlight-V100', '.svn', '.git', 'venv', 'env', '__pycache__', 'node_modules', 'npm_modules']:
                     file_type = Path.FileType.IGNORED
+                    if parent:
+                        if not parent.notes:
+                            parent.notes = entry.name
+                        else:
+                            parent.notes = "%s, %s" % (parent.notes, entry.name)
+                        parent.save()
+
                 else:
                     file_type = Path.FileType.DIRECTORY
                     if entry.name[-4:] == '.app':

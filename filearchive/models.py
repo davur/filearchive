@@ -27,6 +27,7 @@ class Path(models.Model):
         choices=FileType.choices,
     )
     modified_time = models.DateTimeField(blank=True, null=True)
+    notes = models.TextField(blank=True, null=False, default='')
 
     def __str__(self):
         return self.name
